@@ -1,0 +1,177 @@
+/*Background*/
+#home {
+  background-image: url("./images/index.png");
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+
+#home img {
+  animation: appear 4s linear forwards;
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/*Navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(11, 245, 245);
+  padding: 10px 10%;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  transition: all 0.3s linear;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link a:hover {
+  color: #2a9d8f;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 535px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    width: 0px;
+    overflow: hidden;
+    position: fixed;
+    top: 40px;
+    background: black;
+    left: 0;
+    justify-content: center;
+    height: 40px;
+    align-items: center;
+  }
+}
+/* Div to cover page and hide content */
+.preloader {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: #0bf5f5;
+  animation: disappear 3s linear forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes disappear {
+  0%,
+  90% {
+    opacity: 1;
+    z-index: 100;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes appear {
+  0%,
+  90% {
+    opacity: 0;
+    z-index: -1;
+    display: none;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+    z-index: 100;
+  }
+}
+
+/* Spinner */
+.loader {
+  border: 16px solid white;
+  border-top: 16px solid #ffd1dc;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*About*/
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffd1dc;
+}
+
+.about > div,
+.about > img {
+  width: 50%;
+}
+
+.about > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10%;
+}
+/* Media query to change display options of about section */
+@media screen and (max-width: 768px) {
+  .about {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .about > div,
+  .about > img {
+    width: 100%;
+  }
+
+  .about > div:nth-child(odd) {
+    background-color: #0bf5f5;
+  }
+}
