@@ -6,8 +6,10 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #home img {
@@ -158,6 +160,13 @@ html {
   align-items: center;
   flex-direction: column;
   padding: 10%;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
 }
 /* Media query to change display options of about section */
 @media screen and (max-width: 768px) {

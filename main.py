@@ -1,18 +1,17 @@
 import sqlite3
-from sqlite3 import Error
+from flask import Flask, request,jsonify
+from flask_cors import CORS
 
-def create_connection(db_file):
-    """create a database connection to a SQLite database"""
 
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
-    except Error as e:
-        print(e)
-    finally:
-        if conn:
-            conn.close()
-if __name__ == '_main':
-    create_connection(r"C:\sqlite\db\pythonsqlite.db")
+def init_sqlite_db():
+    conn = sqlite3.connect('pearlsN&B.bd')
+    print("Database Opened Successfully")
 
+    conn.execute('CREATE TABLE IF NOT EXISTS bookers(user id INTEGER ,firstname TEXT,lastname TEXT,phone_number INTEGER, category TEXT)')
+    print("Table was created")
+    conn.close()
+
+
+
+
+init_sqlite_db()
