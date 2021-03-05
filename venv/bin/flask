@@ -1,4 +1,4 @@
-#!/home/specialuser/PycharmProjects/pythonProject5/venv/bin/python
+#!/home/specialuser/PycharmProjects/pythonProject5/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
