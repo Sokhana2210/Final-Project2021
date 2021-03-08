@@ -86,7 +86,7 @@ def registered_users():
         return {'msg': msg}
 
 
-@app.route('/show-registered_users/', methods=['GET'])
+@app.route('/show_registered_users/', methods=['GET'])
 def show():
     # users = []
     try:
