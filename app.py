@@ -11,7 +11,7 @@ def init_sqlite_db():
     conn.execute('CREATE TABLE IF NOT EXISTS bookers(id INTEGER PRIMARY KEY AUTOINCREMENT, firstname TEXT,lastname TEXT,phone_number INTEGER, category TEXT)')
     print("Table bookers was created")
 
-    conn.execute('CREATE TABLE IF NOT EXISTS registered_users(id INTEGER PRIMARY KEY AUTOINCREMENT, firstname TEXT, lastname TEXT,username TEXT, phone_number INTEGER, password TEXT)')
+    conn.execute('CREATE TABLE IF NOT EXISTS registered_users(id INTEGER PRIMARY KEY AUTOINCREMENT, firstname TEXT, lastname TEXT, username TEXT, phone_number INTEGER, password TEXT)')
     print("Table registered_users was created")
 
     cursor = conn.cursor()
