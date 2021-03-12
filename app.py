@@ -34,13 +34,11 @@ def dict_factory(cursor, row):
         d[col[0]] = row[idx]
     return d
 
-
-@app.route('/')
+#function to add data
 @app.route('/insert/', methods=['POST'])
 def bookers():
     msg = None
     if request.method == "POST":
-        msg = None
         try:
             post_data = request.get_json()
             firstname = post_data['firstname']
@@ -58,10 +56,9 @@ def bookers():
             msg = "Error occured" + str(e)
 
         finally:
-            return {'msg': msg}
+            return jsonify(msg=msg)
 
 
-@app.route('/')
 @app.route('/place/', methods=['POST'])
 def registered_users():
     msg = None
