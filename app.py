@@ -109,7 +109,6 @@ def display_bookings():
             cursor = connect.cursor()
             cursor.execute("SELECT * FROM bookers")
             users = cursor.fetchall()
-
     except Exception as e:
         connect.rollback()
         print("There was an error fetching results from the database:" + str(e))
