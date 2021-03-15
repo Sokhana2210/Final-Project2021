@@ -35,6 +35,7 @@ def dict_factory(cursor, row):
     return d
 
 #function to add data
+@app.route('/')
 @app.route('/insert/', methods=['POST'])
 def bookers():
     msg = None
